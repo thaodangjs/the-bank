@@ -5,13 +5,13 @@ import App from "./App";
 
 import store from "./store-v1";
 import { deposit } from "./features/accounts/accountSlice";
-
-store.dispatch(deposit(200));
-console.log(store.getState());
+import { Provider } from "react-redux";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
